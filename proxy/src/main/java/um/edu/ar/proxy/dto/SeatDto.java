@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Representa un asiento (fila, columna).
+ * Esta parte del codigo representa un asiento (fila, columna).
  */
 
 @Data

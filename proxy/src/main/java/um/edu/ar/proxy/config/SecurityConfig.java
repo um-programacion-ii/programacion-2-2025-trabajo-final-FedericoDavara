@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
- * Configura la aplicacion como Resource Server que valida JWT.
+ * En esta parte del codigo se configura la aplicacion como Resource Server que valida JWT.
  */
 @Configuration
 public class SecurityConfig {

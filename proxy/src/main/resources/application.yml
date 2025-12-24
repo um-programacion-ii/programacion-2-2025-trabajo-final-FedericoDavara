@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: proxy
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/proxydb
+    username: proxy
+    password: proxy
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  data:
+    redis:
+      host: 192.168.194.250
+      port: 6379
+
+  kafka:
+    bootstrap-servers: 192.168.194.250:9092
+    consumer:
+      group-id: proxy-group
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
