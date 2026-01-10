@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.194.250:5432/proxydb
+    username: proxy
+    password: proxy
+
+  data:
+    redis:
+      host: 192.168.194.250
+      port: 6379
+
+  kafka:
+    bootstrap-servers: 192.168.194.250:9092
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://192.168.194.250:8080/.well-known/jwks.json
+
+kafka:
+  topic:
+    events: eventos-changes
+  groupId: proxy-group-prod
+
+catedra:
+  base: http://192.168.194.250:8080
+
+proxy:
+  default-block-seconds: 300
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
